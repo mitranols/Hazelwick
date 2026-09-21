@@ -1,6 +1,6 @@
 word = input("Enter a word: ")
 lower = word.lower()
-middle = word[(len(word)) // 2)]
+middle = word[(len(word)) // 2]
 print(f"Reversed: {word[::-1]}")
 print(f"Uppercase: {word.upper()}")
 print(f"Length: {len(word)}")
