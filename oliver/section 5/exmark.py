@@ -1,7 +1,7 @@
 exmark = int(input("Enter a mark (or -1 to finish): "))
 totmark = 0
-if exmark < 0 or exmark > 100:
-    print("Invalid mark - must be 0 to 100.")
+lowmark = -1
+highmark = -1
 if exmark >= 0 and exmark <= 100:
     lowmark = exmark
     highmark = exmark
@@ -19,7 +19,13 @@ while exmark != -1:
             highmark = exmark
         exmark = int(input("Enter a mark (or -1 to finish): "))
 print(f"Marks entered: {totmark}")
-print(f"Average: {average / totmark}")
-print(f"Highest: {highmark}")
-print(f"Lowest: {lowmark}")
+if average == 0:
+    print("Average: 0 (You should've entered valid marks)")
+elif average > 0:
+    print(f"Average: {average / totmark}")
+if highmark >= 0 and highmark <= 100 and lowmark >= 0 and lowmark <= 100:
+    print(f"Highest: {highmark}")
+    print(f"Lowest: {lowmark}")
+else:
+    print("No valid marks entered to calculate highest and lowest marks.")
 
