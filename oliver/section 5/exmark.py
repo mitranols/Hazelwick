@@ -2,6 +2,7 @@ exmark = int(input("Enter a mark (or -1 to finish): "))
 totmark = 0
 lowmark = -1
 highmark = -1
+star = ""
 if exmark >= 0 and exmark <= 100:
     lowmark = exmark
     highmark = exmark
@@ -17,6 +18,10 @@ while exmark != -1:
             lowmark = exmark
         elif exmark > highmark:
             highmark = exmark
+        for i in range(exmark//10):
+            star += "*"
+        print(star)
+        star = ""
         exmark = int(input("Enter a mark (or -1 to finish): "))
 print(f"Marks entered: {totmark}")
 if average == 0:
