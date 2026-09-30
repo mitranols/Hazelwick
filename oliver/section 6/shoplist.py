@@ -13,6 +13,7 @@ while sel != 5:
         for i in range(len(list)):
             if list[i] == item:
                 print(f"{item} is already on the list.")
+                error += 1
                 break
-            
-        
+        if error == 0:
+            list.append(item)
