@@ -4,16 +4,27 @@ print("2. Remove an item")
 print("3. View the list")
 print("4. Count items")
 print("5. Quit")
-error = 0
-list = []
+lists = []
 sel = int(input("Choose an option: "))
 while sel != 5:
+    # add an item
     if sel == 1:
         item = input("Item to add: ")
-        for i in range(len(list)):
-            if list[i] == item:
-                print(f"{item} is already on the list.")
-                error += 1
-                break
-        if error == 0:
-            list.append(item)
+        # check for dupes
+        if item in lists == True:
+             print("Item already in list")
+        # addition of item
+        elif item in lists != True:
+             lists.append(item)
+    # remove an item
+    elif sel == 2:
+        item = input("Item to remove: ")
+        if item in lists == True:
+            lists.remove(item)
+        elif item in lists != False:
+            print("Item not in list")
+    elif sel == 3:
+        for i in range(len(lists)):
+            print (f"{i}. {lists[i-1]}")
+            print()
+    sel = int(input("Choose an option: "))
